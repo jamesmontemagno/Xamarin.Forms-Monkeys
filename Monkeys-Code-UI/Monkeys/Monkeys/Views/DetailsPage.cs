@@ -18,10 +18,22 @@ namespace Monkeys.Views
         Text = monkey.Details
       };
 
+      var image = new Image
+      {
+        Source = monkey.Image,
+        Aspect = Aspect.AspectFit,
+        VerticalOptions = LayoutOptions.FillAndExpand
+      };
+
       Content = new ScrollView
       {
         Padding = 20,
-        Content = details
+        Content = new StackLayout
+        {
+          Spacing = 10,
+          VerticalOptions = LayoutOptions.FillAndExpand,
+          Children = { details, image}
+        }
       };
     }
   }

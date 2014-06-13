@@ -4,6 +4,9 @@
 					   x:Class="Monkeys.Views.DetailsPage"
              Title="{Binding Name}">
   <ScrollView Padding="20">
-    <Label Text="{Binding Details}" />
+    <StackLayout VerticalOptions="FillAndExpand" Spacing="10">
+      <Label Text="{Binding Details}" />
+      <Image Source="{Binding Image}"  VerticalOptions="FillAndExpand" Aspect="AspectFit"/>
+    </StackLayout>
   </ScrollView>
 </ContentPage>

@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 					   x:Class="Monkeys.Views.MonkeysPage"
+             xmlns:local="clr-namespace:Monkeys.Views;assembly=Monkeys"
              Title="Monkeys">
   <ListView x:Name="list" ItemsSource="{Binding Monkeys}" ItemTapped="OnItemSelected">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <TextCell Text="{Binding Name}" Detail="{Binding Location}">
-        </TextCell>
+        <local:AspectImageCell Text="{Binding Name}" Detail="{Binding Location}" ImageSource="{Binding Image}"/>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>

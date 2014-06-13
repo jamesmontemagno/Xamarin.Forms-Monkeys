@@ -19,10 +19,11 @@ namespace Monkeys.Views
       var viewModel = new MonkeysViewModel();
       list.ItemsSource = viewModel.Monkeys;
 
-      var cell = new DataTemplate(typeof(TextCell));
+      var cell = new DataTemplate(typeof(AspectImageCell));
       
       cell.SetBinding(TextCell.TextProperty, "Name");
       cell.SetBinding(TextCell.DetailProperty, "Location");
+      cell.SetBinding(ImageCell.ImageSourceProperty, "Image");
 
       list.ItemTemplate = cell;
 
@@ -39,5 +40,9 @@ namespace Monkeys.Views
 
       Content = list;
     }
+  }
+
+  public class AspectImageCell : ImageCell
+  {
   }
 }
