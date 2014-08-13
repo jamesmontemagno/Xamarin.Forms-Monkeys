@@ -13,6 +13,7 @@ namespace Monkeys.Models
     public string Details { get; set; }
     public string Image { get; set; }
 
+
     public string NameSort
     {
       get
@@ -23,5 +24,6 @@ namespace Monkeys.Models
         return Name[0].ToString().ToUpper();
       }
     }
+
   }
 }

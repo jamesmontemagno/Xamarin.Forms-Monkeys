@@ -26,7 +26,6 @@ namespace Monkeys.Views
         list.GroupHeaderTemplate = new DataTemplate(typeof(HeaderCell));
       list.HasUnevenRows = true; // if using a custom template for each cell you might want to enable this.
 
-
       var cell = new DataTemplate(typeof(AspectImageCell));
       
       cell.SetBinding(TextCell.TextProperty, "Name");
