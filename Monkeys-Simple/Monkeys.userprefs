@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.AndroidL" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Monkeys/Monkeys/Views/MonkeysPage.cs">
+    <Files>
+      <File FileName="Monkeys/Monkeys/Views/MonkeysPage.cs" Line="1" Column="1" />
+      <File FileName="Monkeys/Monkeys/Utils/MonkeyHelper.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

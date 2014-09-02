@@ -4,10 +4,25 @@
 					   x:Class="Monkeys.Views.MonkeysPage"
              xmlns:local="clr-namespace:Monkeys.Views;assembly=Monkeys"
              Title="Monkeys">
-  <ListView x:Name="list" ItemsSource="{Binding Monkeys}" ItemTapped="OnItemSelected">
+  <ListView x:Name="list"  ItemsSource="{Binding Monkeys}" ItemTapped="OnItemSelected" RowHeight="55">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <local:AspectImageCell Text="{Binding Name}" Detail="{Binding Location}" ImageSource="{Binding Image}"/>
+      	<ViewCell>
+      		<Grid Padding="5">
+	      		<Grid.RowDefinitions>
+				    <RowDefinition Height="20"></RowDefinition>
+				    <RowDefinition Height="20"></RowDefinition>
+		    	</Grid.RowDefinitions>
+		    	<Grid.ColumnDefinitions>
+				    <ColumnDefinition Width="*"></ColumnDefinition>
+				    <ColumnDefinition Width="40"></ColumnDefinition>
+			    </Grid.ColumnDefinitions>
+
+			    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" LineBreakMode="TailTruncation"></Label>
+			    <Label Grid.Row="1" Grid.Column="0" Text="{Binding Location}" Font="Small" TextColor="Gray" LineBreakMode="TailTruncation"></Label>
+			    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Source="{Binding Image}" Aspect="AspectFill"/>
+      		</Grid>
+      	</ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>

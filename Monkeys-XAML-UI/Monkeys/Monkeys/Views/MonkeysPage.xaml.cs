@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace Monkeys.Views
 {
-  public partial class MonkeysPage
+  public partial class MonkeysPage : ContentPage
   {
     public MonkeysPage()
     {

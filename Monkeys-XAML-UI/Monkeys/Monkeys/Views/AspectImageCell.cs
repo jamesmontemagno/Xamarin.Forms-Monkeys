@@ -4,5 +4,6 @@ namespace Monkeys.Views
 {
   public class AspectImageCell : ImageCell
   {
+
   }
 }
