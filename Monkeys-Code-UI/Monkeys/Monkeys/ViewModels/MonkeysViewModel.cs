@@ -1,4 +1,5 @@
-﻿using Monkeys.Models;
+﻿using Monkeys.Helpers;
+using Monkeys.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,6 +12,7 @@ namespace Monkeys.ViewModels
   public class MonkeysViewModel
   {
     public ObservableCollection<Monkey> Monkeys { get; set; }
+    public ObservableCollection<Grouping<string, Monkey>> MonkeysGrouped { get; set; }
 
     public MonkeysViewModel()
     {
@@ -87,6 +89,69 @@ namespace Monkeys.ViewModels
         Details = "The proboscis monkey or long-nosed monkey, known as the bekantan in Malay, is a reddish-brown arboreal Old World monkey that is endemic to the south-east Asian island of Borneo.",
         Image = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Proboscis_Monkey_in_Borneo.jpg/250px-Proboscis_Monkey_in_Borneo.jpg"
       });
+
+      Monkeys.Add(new Monkey
+      {
+        Name = "Spider Monkey",
+        Location = "Central and South America",
+        Details = "Spider monkeys of the genus Ateles are New World monkeys in the subfamily Atelinae, family Atelidae. Like other atelines, they are found in tropical forests of Central and South America, from southern Mexico to Brazil.",
+        Image = "http://upload.wikimedia.org/wikipedia/commons/8/83/Spider_monkey_-Belize_Zoo-8b.jpg"
+      });
+
+      Monkeys.Add(new Monkey
+      {
+        Name = "Saki Monkey",
+        Location = "South America",
+        Details = "Sakis, or saki monkeys, are any of several New World monkeys of the genus Pithecia.[1] They are closely related to the bearded sakis of genus Chiropotes.",
+        Image = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/WhiteFacedSaki.jpg/200px-WhiteFacedSaki.jpg"
+      });
+
+      Monkeys.Add(new Monkey
+      {
+        Name = "Emperor Tamarin",
+        Location = "Amazon Basin",
+        Details = "The emperor tamarin, is a species of tamarin allegedly named for its resemblance to the German emperor Wilhelm II. It lives in the southwest Amazon Basin, in east Peru, north Bolivia and in the west Brazilian states of Acre and Amazonas",
+        Image = "http://upload.wikimedia.org/wikipedia/commons/5/55/Tamarin_portrait.JPG"
+      });
+
+      Monkeys.Add(new Monkey
+      {
+        Name = "Spectacled Langur",
+        Location = "Malaysia",
+        Details = "The dusky leaf monkey, spectacled langur, or spectacled leaf monkey (Trachypithecus obscurus) is a species of primate in the Cercopithecidae family. It is found in Malaysia, Burma, and Thailand.",
+        Image = "http://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Dusky_leaf_monkey%2C_Trachypithecus_obscurus.jpg/220px-Dusky_leaf_monkey%2C_Trachypithecus_obscurus.jpg"
+      });
+
+      Monkeys.Add(new Monkey
+      {
+        Name = "Colobus Monkey",
+        Location = "Africa",
+        Details = "Black-and-white colobuses (or colobi) are Old World monkeys of the genus Colobus, native to Africa. They are closely related to the brown colobus monkeys of genus Piliocolobus.[1] The word 'colobus' comes from Greek κολοβός kolobós ('docked'), and is so named because in this genus, the thumb is a stump. Colobuses are herbivorous, eating leaves, fruit, flowers, and twigs. Their habitats include primary and secondary forests, riverine forests, and wooded grasslands; they are found more in higher-density logged forests than in other primary forests. Their ruminant-like digestive systems have enabled these leaf-eaters to occupy niches that are inaccessible to other primates.",
+        Image = "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Colubusmonkey.JPG/200px-Colubusmonkey.JPG"
+      });
+
+      Monkeys.Add(new Monkey
+      {
+        Name = "De Brazza's Monkey",
+        Location = "Africa",
+        Details = "De Brazza's monkey (Cercopithecus neglectus) is an Old World monkey endemic to the wetlands of central Africa. It is one of the most widespread African primates that live in forests.",
+        Image = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Cercopithecus_neglectus.jpg/220px-Cercopithecus_neglectus.jpg"
+      });
+
+      Monkeys.Add(new Monkey
+      {
+        Name = "Chimpanzee",
+        Location = "West and Central Africa",
+        Details = "Chimpanzees, sometimes colloquially chimps, are two extant hominid species of apes in the genus Pan. The Congo River divides the native habitats of the two species",
+        Image = "http://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Schimpanse_Zoo_Leipzig.jpg/220px-Schimpanse_Zoo_Leipzig.jpg"
+      });
+
+      var sorted = from monkey in Monkeys
+                   orderby monkey.Name
+                   group monkey by monkey.NameSort into monkeyGroup
+                   select new Grouping<string, Monkey>(monkeyGroup.Key, monkeyGroup);
+
+      MonkeysGrouped = new ObservableCollection<Grouping<string, Monkey>>(sorted);
     }
   }
 }

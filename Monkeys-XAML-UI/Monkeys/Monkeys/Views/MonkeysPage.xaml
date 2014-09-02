@@ -4,7 +4,24 @@
 					   x:Class="Monkeys.Views.MonkeysPage"
              xmlns:local="clr-namespace:Monkeys.Views;assembly=Monkeys"
              Title="Monkeys">
-  <ListView x:Name="list"  ItemsSource="{Binding Monkeys}" ItemTapped="OnItemSelected" RowHeight="55">
+  <ListView x:Name="list" 
+            ItemsSource="{Binding MonkeysGrouped}" 
+            ItemTapped="OnItemSelected"
+            IsGroupingEnabled="True"
+            GroupDisplayBinding="{Binding Key}"
+            GroupShortNameBinding="{Binding Key}"
+            HasUnevenRows="True">
+    <ListView.GroupHeaderTemplate>
+      <DataTemplate>
+        <ViewCell Height="25">
+          <StackLayout VerticalOptions="FillAndExpand"
+                       Padding="5"
+                       BackgroundColor="#3498DB">
+            <Label Text="{Binding Key}" TextColor="White" VerticalOptions="Center"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.GroupHeaderTemplate>
     <ListView.ItemTemplate>
       <DataTemplate>
       	<ViewCell>

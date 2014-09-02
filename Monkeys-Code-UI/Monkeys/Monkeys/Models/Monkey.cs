@@ -13,5 +13,17 @@ namespace Monkeys.Models
     public string Details { get; set; }
     //URL for our monkey image!
     public string Image { get; set; }
+
+
+    public string NameSort
+    {
+      get 
+      {
+        if (string.IsNullOrWhiteSpace(Name) || Name.Length == 0)
+          return "?";
+
+        return Name[0].ToString().ToUpper();
+      }
+    }
   }
 }

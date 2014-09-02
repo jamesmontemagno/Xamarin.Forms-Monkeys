@@ -17,7 +17,14 @@ namespace Monkeys.Views
       
       var list = new ListView();
       var viewModel = new MonkeysViewModel();
-      list.ItemsSource = viewModel.Monkeys;
+
+      list.ItemsSource = viewModel.MonkeysGrouped;
+      list.IsGroupingEnabled = true;
+      list.GroupDisplayBinding = new Binding("Key");
+      list.GroupShortNameBinding = new Binding("Key");
+      if(Device.OS != TargetPlatform.WinPhone)
+        list.GroupHeaderTemplate = new DataTemplate(typeof(HeaderCell));
+      list.HasUnevenRows = true; // if using a custom template for each cell you might want to enable this.
 
       var cell = new DataTemplate(typeof(AspectImageCell));
       
@@ -26,6 +33,8 @@ namespace Monkeys.Views
       cell.SetBinding(ImageCell.ImageSourceProperty, "Image");
 
       list.ItemTemplate = cell;
+
+
 
       list.ItemTapped += (sender, args) =>
       {
