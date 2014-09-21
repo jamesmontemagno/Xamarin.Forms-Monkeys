@@ -1,13 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4.7.1" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.0" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Monkeys/Monkeys/Views/MonkeysPage.xaml">
     <Files>
-      <File FileName="Monkeys/Monkeys/Views/MonkeysPage.xaml" Line="22" Column="83" />
+      <File FileName="Monkeys/Monkeys/Views/MonkeysPage.xaml" Line="28" Column="28" />
       <File FileName="Monkeys/Monkeys/App.cs" Line="1" Column="1" />
       <File FileName="Monkeys/Monkeys/Views/MonkeysPage.xaml.cs" Line="1" Column="1" />
       <File FileName="Monkeys/Monkeys/Views/DetailsPage.xaml.cs" Line="1" Column="1" />
       <File FileName="Monkeys/Monkeys.iOS/AppDelegate.cs" Line="1" Column="1" />
       <File FileName="Monkeys/Monkeys/Views/AspectImageCell.cs" Line="1" Column="1" />
+      <File FileName="Monkeys/Monkeys.iOS/Monkeys.iOS.csproj" Line="14" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

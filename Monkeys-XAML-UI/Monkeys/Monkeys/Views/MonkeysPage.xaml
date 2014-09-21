@@ -24,7 +24,7 @@
     </ListView.GroupHeaderTemplate>
     <ListView.ItemTemplate>
       <DataTemplate>
-      	<ViewCell>
+      	<ViewCell Height="60">
       		<Grid Padding="5">
 	      		<Grid.RowDefinitions>
 				    <RowDefinition Height="20"></RowDefinition>
