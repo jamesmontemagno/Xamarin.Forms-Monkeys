@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="Droid/Monkeys.Droid.csproj" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Monkeys/Views/HomePage.xaml.cs">
+    <Files>
+      <File FileName="Monkeys/Views/HomePage.xaml" Line="23" Column="1" />
+      <File FileName="Monkeys/Views/MonkeysPage.xaml" Line="17" Column="39" />
+      <File FileName="Monkeys/Views/DetailsPage.xaml.cs" Line="13" Column="13" />
+      <File FileName="Monkeys/App.cs" Line="18" Column="85" />
+      <File FileName="Monkeys/Views/DetailsPage.xaml" Line="22" Column="73" />
+      <File FileName="Monkeys/Views/MonkeysPage.xaml.cs" Line="26" Column="13" />
+      <File FileName="Monkeys/Views/HomePage.xaml.cs" Line="23" Column="54" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Monkeys.Droid PreferredExecutionTarget="Android.Nexus 4 (Lollipop)" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Monkeys.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8AFDFDBC-D2C7-4820-A079-9E0E23B74FDA" />
+</Properties>
