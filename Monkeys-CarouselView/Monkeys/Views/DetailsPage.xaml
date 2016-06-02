@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Monkeys.Views.DetailsPage"
+		xmlns:design="clr-namespace:Monkeys;assembly=Monkeys"
+        xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+        BindingContext="{x:Static design:ViewModelLocator.DetailsViewModel}"
+        Title="{Binding Monkey.Name}">
+    <ContentPage.Content>
+		<ScrollView>
+    		<StackLayout Padding="10">
+                <controls:CircleImage 
+                        BorderColor="Aqua"
+                        BorderThickness="3"
+                        HeightRequest="200"
+                        WidthRequest="200"
+                        HorizontalOptions="CenterAndExpand"
+                        Aspect="AspectFill"
+                        Source="{Binding Monkey.Image}"/>
+				<Label Text="{Binding Monkey.Name}" FontAttributes="Bold"/>
+                <Label Text="{Binding Monkey.Location}" FontSize="Micro"/>
+                <Label Text="{Binding Monkey.Details}" FontSize="Large"/>
+    		</StackLayout>
+		</ScrollView>
+    </ContentPage.Content>
+</ContentPage>
