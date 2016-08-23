@@ -8,10 +8,16 @@ namespace Monkeys.Views
 {
     public partial class MonkeysPage : ContentPage
     {
+        MonkeysViewModel viewModel;
         public MonkeysPage()
         {
             InitializeComponent();
-            BindingContext = new MonkeysViewModel();
+
+            viewModel = new MonkeysViewModel();
+            foreach (var item in viewModel.LocationList)
+                LocationPicker.Items.Add(item);
+
+            BindingContext = viewModel;
         }
 
         void Handle_ItemTapped(object sender, ItemTappedEventArgs e)

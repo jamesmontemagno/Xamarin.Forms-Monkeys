@@ -2,11 +2,8 @@
 <ContentPage 
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="Monkeys.Views.DetailsPage"
-		xmlns:design="clr-namespace:Monkeys;assembly=Monkeys"
-        xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-        BindingContext="{x:Static design:ViewModelLocator.DetailsViewModel}"
-        Title="{Binding Monkey.Name}">
+		x:Class="Monkeys.Views.DetailsPage" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+    Title="{Binding Monkey.Name}">
     <ContentPage.Content>
 		<ScrollView>
     		<StackLayout Padding="10">
