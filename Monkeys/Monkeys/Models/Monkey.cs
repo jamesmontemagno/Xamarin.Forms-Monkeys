@@ -1,13 +1,31 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel;
+using MvvmHelpers;
 
 namespace Monkeys.Models
 {
-    public class Monkey
+    public class Monkey : ObservableObject
     {
-        public string Name { get; set; }
+        string name;
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if(SetProperty(ref name, value))
+                {
+                    //do something
+                }
+                else
+                {
+                    //do something else
+                }
+            }
+        }
         public string Location { get; set; }
+
         public string Details { get; set; }
-        //URL for our monkey image!
+
         public string Image { get; set; }
 
         [JsonIgnore]

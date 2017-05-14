@@ -14,14 +14,12 @@ namespace Monkeys.Views
             InitializeComponent();
 
             viewModel = new MonkeysViewModel();
-            foreach (var item in viewModel.LocationList)
-                LocationPicker.Items.Add(item);
 
             BindingContext = viewModel;
         }
 
         void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        => ((ListView)sender).SelectedItem = null;
+            => ((ListView)sender).SelectedItem = null;
 
         void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {

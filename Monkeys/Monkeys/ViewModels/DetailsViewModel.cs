@@ -5,6 +5,7 @@ namespace Monkeys.ViewModels
 {
     public class DetailsViewModel
     {
+        
         public Monkey Monkey { get; set; }
         public DetailsViewModel(Monkey monkey)
         {
