@@ -11,11 +11,11 @@ namespace Monkeys
     {
         static MonkeysViewModel monkeysVM;
         public static MonkeysViewModel MonkeysViewModel 
-        => monkeysVM ?? (monkeysVM = new MonkeysViewModel());
+            => monkeysVM ?? (monkeysVM = new MonkeysViewModel());
 
         static DetailsViewModel detailsVM;
         public static DetailsViewModel DetailsViewModel
-        => detailsVM ?? (detailsVM = new DetailsViewModel(MonkeyHelper.Monkeys[0]));
+            => detailsVM ?? (detailsVM = new DetailsViewModel(MonkeyHelper.Monkeys[0]));
     }
 
     public class App : Application
@@ -25,7 +25,7 @@ namespace Monkeys
             MainPage = new NavigationPage(new HomePage())
             {
                 BarTextColor = Color.White,
-                BarBackgroundColor = Color.FromHex("#F2C500")
+                BarBackgroundColor = Color.FromHex("#2196F3")
             };
         }
 

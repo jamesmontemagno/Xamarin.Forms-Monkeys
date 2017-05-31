@@ -13,12 +13,9 @@ namespace Monkeys.Helpers
 
         public static Monkey GetRandomMonkey()
         {
-            //var output = Newtonsoft.Json.JsonConvert.SerializeObject(Monkeys);
             return Monkeys[random.Next(0, Monkeys.Count)];
         }
 
-
-        public static ObservableCollection<Grouping<string, Monkey>> MonkeysGrouped { get; set; }
 
         public static ObservableCollection<Monkey> Monkeys { get; set; }
 
@@ -100,13 +97,7 @@ namespace Monkeys.Helpers
             });
 
 
-            var sorted = from monkey in Monkeys
-                         orderby monkey.Name
-                         group monkey by monkey.NameSort into monkeyGroup
-                         select new Grouping<string, Monkey>(monkeyGroup.Key, monkeyGroup);
-
-            MonkeysGrouped = new ObservableCollection<Grouping<string, Monkey>>(sorted);
-
+       
         }
     }
 }

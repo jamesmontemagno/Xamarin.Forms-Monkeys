@@ -15,16 +15,9 @@ namespace Monkeys.Views
         }
 
         void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        => ((ListView)sender).SelectedItem = null;
-
-        void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var monkey = ((ListView)sender).SelectedItem as Monkey;
-            if (monkey == null)
-                return;
+            => ((ListView)sender).SelectedItem = null;
 
 
-        }
     }
 }
 

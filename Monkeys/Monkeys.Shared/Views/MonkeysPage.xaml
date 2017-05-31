@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+        xmlns="http://xamarin.com/schemas/2014/forms" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        x:Class="Monkeys.Views.MonkeysPage"
+	    Title="Monkeys">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Monkeys}"
+            HasUnevenRows="true"
+            RowHeight="-1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="20" Orientation="Horizontal">
+                            <Image Source="{Binding Image}"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            Aspect="AspectFill"/>
+                            <StackLayout VerticalOptions="Center" Padding="20">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Location}" TextColor="Blue"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

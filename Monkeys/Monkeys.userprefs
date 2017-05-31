@@ -1,10 +1,24 @@
-﻿<Properties StartupConfiguration="{88817254-C139-4DE4-B9A7-DA58A24337BE}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.ItemProperties.Monkeys.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+﻿<Properties StartupConfiguration="{88817254-C139-4DE4-B9A7-DA58A24337BE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Monkeys.Shared/Views/HomePage.xaml.cs">
+    <Files>
+      <File FileName="Monkeys.Shared/ViewModels/MonkeysViewModel.cs" Line="13" Column="10" />
+      <File FileName="Monkeys.Shared/Views/HomePage.xaml" Line="19" Column="1" />
+      <File FileName="Monkeys.Shared/Views/HomePage.xaml.cs" Line="20" Column="9" />
+      <File FileName="Monkeys.Shared/Views/MonkeysPage.xaml.cs" Line="14" Column="9" />
+      <File FileName="Monkeys.Shared/Views/MonkeysPage.xaml" Line="30" Column="1" />
+      <File FileName="Monkeys.Shared/Models/Monkey.cs" Line="15" Column="150" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/jamesmontemagno/GitHub/Xamarin.Forms-Monkeys/Monkeys/Monkeys/Views/HomePage.xaml" relfile="Monkeys/Views/HomePage.xaml" line="6" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/GitHub/Xamarin.Forms-Monkeys/Monkeys/Monkeys.Shared/Views/HomePage.xaml.cs" relfile="Monkeys.Shared/Views/HomePage.xaml.cs" line="18" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/GitHub/Xamarin.Forms-Monkeys/Monkeys/Monkeys.Shared/Views/MonkeysPage.xaml.cs" relfile="Monkeys.Shared/Views/MonkeysPage.xaml.cs" line="14" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Monkeys.iOS PreferredExecutionTarget="D701553A-8D9F-4226-BB3F-B36EB7D09342" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Monkeys.Android PreferredExecutionTarget="21a2e963-4441-422d-94f0-f22d3e0d86b1" />
 </Properties>

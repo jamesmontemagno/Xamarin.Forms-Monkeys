@@ -15,7 +15,6 @@ namespace Monkeys.iOS
             global::Xamarin.Forms.Forms.Init();
 
             LoadApplication(new App());
-            ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

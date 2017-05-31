@@ -1,4 +1,5 @@
 ﻿using System;
+using Monkeys.Helpers;
 using Monkeys.Models;
 
 namespace Monkeys.ViewModels
@@ -9,6 +10,11 @@ namespace Monkeys.ViewModels
         public DetailsViewModel(Monkey monkey)
         {
             Monkey = monkey;
+        }
+
+        public DetailsViewModel()
+        {
+            Monkey = MonkeyHelper.GetRandomMonkey();
         }
     }
 }

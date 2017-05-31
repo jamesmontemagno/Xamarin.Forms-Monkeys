@@ -6,17 +6,13 @@
         Title="Monkeys">
     <ContentPage.Content>
         <StackLayout Padding="20" Spacing="10">
+           <Label Text="Hello Xamarin Show!"
+            FontSize="Large"
+            TextColor="Red"/>
             <Button Text="Traditional XAML" 
                     x:Name="ButtonTraditional"
                     VerticalOptions="Center"
                     Clicked="ButtonTraditionalClicked"/>
-            <Button Text="Data Pages" 
-                    x:Name="ButtonDataPages"
-                    VerticalOptions="Center"
-                    Clicked="ButtonDataPagesClicked"/>
-
-           <Button Text="Hello world"/>
-			<Switch Margin="10,30" IsToggled="false"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

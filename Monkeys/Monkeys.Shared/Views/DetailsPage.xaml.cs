@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Monkeys.Models;
+using Monkeys.ViewModels;
 using Xamarin.Forms;
 
 namespace Monkeys.Views
@@ -10,7 +11,12 @@ namespace Monkeys.Views
         public DetailsPage(Monkey monkey)
         {
             InitializeComponent();
+            BindingContext = new DetailsViewModel(monkey);
+        }
 
+        public DetailsPage()
+        {
+            InitializeComponent();
         }
     }
 }

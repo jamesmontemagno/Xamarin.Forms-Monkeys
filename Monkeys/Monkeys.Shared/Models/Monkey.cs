@@ -9,6 +9,12 @@
         public string Image { get; set; }
 
         public string NameSort => Name[0].ToString();
+
+        public override string ToString()
+        {
+            return string.Format("[Monkey: Name={0}, Location={1}, Details={2}, Image={3}, NameSort={4}]", Name, Location, Details, Image, NameSort);
+        }
+
     }
 }
 
