@@ -1,4 +1,10 @@
-﻿using System;
+﻿
+using System;
+#if __ANDROID__
+using ImageCircle.Forms.Plugin.Droid;
+#else
+using ImageCircle.Forms.Plugin.iOS;
+#endif
 using Monkeys.Helpers;
 using Monkeys.ViewModels;
 using Monkeys.Views;
@@ -22,6 +28,7 @@ namespace Monkeys
     {
         public App()
         {
+            ImageCircleRenderer.Init();
             MainPage = new NavigationPage(new HomePage())
             {
                 BarTextColor = Color.White,

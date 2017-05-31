@@ -18,6 +18,15 @@ namespace Monkeys.Views
             => ((ListView)sender).SelectedItem = null;
 
 
+        async void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            var monkey = e.SelectedItem as Monkey;
+            if (monkey == null)
+                return;
+            await Navigation.PushAsync(new DetailsPage(monkey), true);
+
+            ((ListView)sender).SelectedItem = null;
+        }
     }
 }
 

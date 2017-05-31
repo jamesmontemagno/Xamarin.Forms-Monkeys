@@ -6,6 +6,7 @@
 	    Title="Monkeys">
     <ContentPage.Content>
         <ListView ItemsSource="{Binding Monkeys}"
+            ItemSelected="Handle_ItemSelected"
             HasUnevenRows="true"
             RowHeight="-1">
             <ListView.ItemTemplate>

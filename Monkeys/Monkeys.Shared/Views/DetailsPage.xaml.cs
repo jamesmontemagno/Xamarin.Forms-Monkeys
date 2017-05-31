@@ -17,6 +17,7 @@ namespace Monkeys.Views
         public DetailsPage()
         {
             InitializeComponent();
+            BindingContext = new DetailsViewModel();
         }
     }
 }

@@ -14,10 +14,10 @@ namespace Monkeys.Views
 
         async void ButtonTraditionalClicked(object sender, System.EventArgs e)
         {
-            //await Navigation.PushAsync(new MonkeysPage());
+            await Navigation.PushAsync(new MonkeysPage());
 
-            var names = LookupName(1);
-            ((Button)sender).Text = names.first + " " + names.last; 
+            //var names = LookupName(1);
+            //((Button)sender).Text = names.first + " " + names.last; 
         }
 
         (string first, string middle, string last) LookupName(long id) // tuple return type
