@@ -16,7 +16,9 @@ fi
 
 echo "Package name detected: ${PACKAGENAME}"
 
-sed -i.bak "s/package="\"${PACKAGENAME}\""/package="\"${MANIFEST}\""/" com.newpackagename
+NEWNAME=com.newname
+
+sed -i.bak "s/package="\"${PACKAGENAME}\""/package="\"${NEWNAME}\""/" ${MANIFEST}
 
 
 VERSIONNAME=`grep versionName ${MANIFEST} | sed 's/.*versionName\s*=\s*\"\([^\"]*\)\".*/\1/g'`
