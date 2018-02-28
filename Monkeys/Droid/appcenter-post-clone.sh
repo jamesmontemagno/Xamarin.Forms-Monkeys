@@ -14,7 +14,10 @@ if [ -z "${PACKAGENAME}" ] ; then
     exit 1
 fi
 
-sed -i.bak "s/package="\"${PACKAGENAME}\""/package="\"${MANIFEST}\""/" "com.newpackagename"
+echo "Package name detected: ${PACKAGENAME}"
+
+sed -i.bak "s/package="\"${PACKAGENAME}\""/package="\"${MANIFEST}\""/" com.newpackagename
+
 
 VERSIONNAME=`grep versionName ${MANIFEST} | sed 's/.*versionName\s*=\s*\"\([^\"]*\)\".*/\1/g'`
 
