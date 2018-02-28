@@ -4,6 +4,8 @@
 
 MANIFEST=$BUILD_REPOSITORY_LOCALPATH/Monkeys/Droid/Properties/AndroidManifest.xml
 
+cat $MANIFEST
+
 # Check branch and run commands if so:
 
 PACKAGENAME=`grep package ${MANIFEST} | sed 's/.*package\s*=\s*\"\([^\"]*\)\".*/\1/g'`
@@ -12,8 +14,7 @@ if [ -z "${PACKAGENAME}" ] ; then
     exit 1
 fi
 
-sed -i.bak "s/package="\"${PACKAGENAME}\""/package="\"${MANIFEST}\""/" 
-com.newpackagename
+sed -i.bak "s/package="\"${PACKAGENAME}\""/package="\"${MANIFEST}\""/" "com.newpackagename"
 
 VERSIONNAME=`grep versionName ${MANIFEST} | sed 's/.*versionName\s*=\s*\"\([^\"]*\)\".*/\1/g'`
 
