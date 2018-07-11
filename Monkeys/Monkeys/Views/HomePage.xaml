@@ -9,7 +9,7 @@
             <Button Text="Traditional XAML" 
                     x:Name="ButtonTraditional"
                     VerticalOptions="Center"
-                    Clicked="ButtonTraditionalClicked"/>
+                    Clicked="ButtonTraditionalClicked"/> 
             <Button Text="Data Pages" 
                     x:Name="ButtonDataPages"
                     VerticalOptions="Center"
@@ -18,5 +18,5 @@
            <Button Text="Hello world"/>
 			<Switch Margin="10,30" IsToggled="false"/>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content> 
 </ContentPage>
