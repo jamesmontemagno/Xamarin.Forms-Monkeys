@@ -14,10 +14,13 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Margin="10,0" Text="{Binding MonkeyCount, StringFormat='{0} Monkeys'}"/>
-            <ListView ItemsSource="{Binding Monkeys}"
+            <ListView ItemsSource="{Binding MonkeysGrouped}"
 					ItemTapped="Handle_ItemTapped"
 					ItemSelected="Handle_ItemSelected"
-                    HasUnevenRows="true">
+                    HasUnevenRows="true"
+                    GroupShortNameBinding = "{Binding Key}"
+                    IsGroupingEnabled = "true"
+                    GroupDisplayBinding = "{Binding Key}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="models:Monkey">
                         <ViewCell>
@@ -35,7 +38,7 @@
 										VerticalOptions="CenterAndExpand"
 										Aspect="AspectFill"
                                        Source="{Binding Image}"/>
-                                <StackLayout VerticalOptions="Center">
+                                <StackLayout VerticalOptions="Center" Grid.Column="1">
                                     <Label Text="{Binding Name}"/>
                                     <Label Text="{Binding Location}"/>
                                 </StackLayout>
@@ -44,39 +47,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!--<ListView ItemsSource="{Binding MonkeysGrouped}"
-					ItemTapped="Handle_ItemTapped"
-					ItemSelected="Handle_ItemSelected"
-                    HasUnevenRows="true"
-                    GroupShortNameBinding = "{Binding Key}"
-                    IsGroupingEnabled = "true"
-                    GroupDisplayBinding = "{Binding Key}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <controls:CircleImage 
-										BorderColor="Aqua"
-										BorderThickness="3"
-										HeightRequest="66"
-                                        WidthRequest="66"
-										HorizontalOptions="CenterAndExpand"
-										VerticalOptions="CenterAndExpand"
-										Aspect="AspectFill"
-                                       Source="{Binding Image}"/>
-                                <StackLayout VerticalOptions="Center">
-                                    <Label Text="{Binding Name}"/>
-                                    <Label Text="{Binding Location}"/>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monkeys", "Monkeys\Monkeys.csproj", "{D46570B2-0EE1-4D8C-B60C-6D83DDFDA0FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monkeys", "Monkeys\Monkeys.csproj", "{D46570B2-0EE1-4D8C-B60C-6D83DDFDA0FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monkeys.iOS", "iOS\Monkeys.iOS.csproj", "{AE9DDA08-AE58-46C1-B350-8C74526E6984}"
 EndProject
@@ -44,6 +44,7 @@ Global
 		{AE9DDA08-AE58-46C1-B350-8C74526E6984}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{88817254-C139-4DE4-B9A7-DA58A24337BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{88817254-C139-4DE4-B9A7-DA58A24337BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88817254-C139-4DE4-B9A7-DA58A24337BE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{88817254-C139-4DE4-B9A7-DA58A24337BE}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{88817254-C139-4DE4-B9A7-DA58A24337BE}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{88817254-C139-4DE4-B9A7-DA58A24337BE}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU

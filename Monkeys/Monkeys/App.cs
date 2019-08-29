@@ -12,7 +12,7 @@ namespace Monkeys
     {
         public App()
         {
-            MainPage = new NavigationPage(new HomePage())
+            MainPage = new NavigationPage(new MonkeysPage())
             {
                 BarTextColor = Color.White,
                 BarBackgroundColor = Color.FromHex("#F2C500")
