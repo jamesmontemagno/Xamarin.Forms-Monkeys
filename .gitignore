@@ -214,3 +214,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+/.vs
+/Monkeys/.vs/Monkeys/v16/Server/sqlite3
+/Monkeys/.vs/Monkeys/DesignTimeBuild
+/Monkeys/MigrationBackup

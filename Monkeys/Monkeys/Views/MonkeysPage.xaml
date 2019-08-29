@@ -3,16 +3,48 @@
         xmlns="http://xamarin.com/schemas/2014/forms" 
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
         x:Class="Monkeys.Views.MonkeysPage"
-        xmlns:design="clr-namespace:Monkeys;assembly=Monkeys"
-        xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-		BindingContext="{x:Static design:ViewModelLocator.MonkeysViewModel}"
-        Title="Traditional Monkey">
+        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+        xmlns:models="clr-namespace:Monkeys.Models"
+        xmlns:viewmodels="clr-namespace:Monkeys.ViewModels"
+        x:DataType="viewmodels:MonkeysViewModel"
+        Title="Monkeys">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="How many monkeys?" x:Name="ButtonHowMany"/> 
-			<Label Margin="10,0"
-				    Text="{Binding MonkeyCount, StringFormat='{0} Monkeys'}"/>
-            <ListView ItemsSource="{Binding MonkeysGrouped}"
+            <Label Margin="10,0" Text="{Binding MonkeyCount, StringFormat='{0} Monkeys'}"/>
+            <ListView ItemsSource="{Binding Monkeys}"
+					ItemTapped="Handle_ItemTapped"
+					ItemSelected="Handle_ItemSelected"
+                    HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Monkey">
+                        <ViewCell>
+                            <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <controls:CircleImage 
+										BorderColor="Aqua"
+										BorderThickness="3"
+										HeightRequest="66"
+                                        WidthRequest="66"
+										HorizontalOptions="CenterAndExpand"
+										VerticalOptions="CenterAndExpand"
+										Aspect="AspectFill"
+                                       Source="{Binding Image}"/>
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding Location}"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<ListView ItemsSource="{Binding MonkeysGrouped}"
 					ItemTapped="Handle_ItemTapped"
 					ItemSelected="Handle_ItemSelected"
                     HasUnevenRows="true"
@@ -23,37 +55,28 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-
                                 <controls:CircleImage 
 										BorderColor="Aqua"
 										BorderThickness="3"
 										HeightRequest="66"
+                                        WidthRequest="66"
 										HorizontalOptions="CenterAndExpand"
 										VerticalOptions="CenterAndExpand"
 										Aspect="AspectFill"
-                                       WidthRequest="66"
-                                       Grid.RowSpan="2"
                                        Source="{Binding Image}"/>
-                                <Label Grid.Column="1"
-                                       Text="{Binding Name}"
-									   VerticalOptions="End"/>
-                                <Label Grid.Column="1"
-                                       Grid.Row="1"
-                                       VerticalOptions="Start"
-                                       Text="{Binding Location}"/>
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding Location}"/>
+                                </StackLayout>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
