@@ -1,6 +1,7 @@
 ﻿using Monkeys.Helpers;
 using Monkeys.Models;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Monkeys.ViewModels
@@ -13,10 +14,22 @@ namespace Monkeys.ViewModels
         public MonkeysViewModel()
         {
 
-            Monkeys = MonkeyHelper.Monkeys;
-            MonkeysGrouped = MonkeyHelper.MonkeysGrouped;
+        }
+        public MonkeysViewModel(bool designData)
+        {
+            if (designData)
+            { 
+                Monkeys = MonkeyHelper.Monkeys;
+                MonkeysGrouped = MonkeyHelper.MonkeysGrouped;
+            }
+            else
+            {
+                //Setup web requests and such
+            }
         }
 
-        public int MonkeyCount => Monkeys.Count;
+        public bool IsBusy { get; set; }
+
+        public int MonkeyCount => Monkeys?.Count ?? 0;
     }
 }

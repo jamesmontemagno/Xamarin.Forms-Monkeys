@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Monkeys.ViewModels;
 using Xamarin.Forms;
 using Monkeys.Models;
+using System.ComponentModel;
 
 namespace Monkeys.Views
 {
@@ -11,7 +12,7 @@ namespace Monkeys.Views
         public MonkeysPage()
         {
             InitializeComponent();
-            BindingContext = new MonkeysViewModel();
+            BindingContext = new MonkeysViewModel(true);
         }
 
         void Handle_ItemTapped(object sender, ItemTappedEventArgs e)

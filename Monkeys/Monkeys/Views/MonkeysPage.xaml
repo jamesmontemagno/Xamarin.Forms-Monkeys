@@ -1,52 +1,89 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-        xmlns="http://xamarin.com/schemas/2014/forms" 
-        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-        x:Class="Monkeys.Views.MonkeysPage"
-        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
-        xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-        xmlns:models="clr-namespace:Monkeys.Models"
-        xmlns:viewmodels="clr-namespace:Monkeys.ViewModels"
-        x:DataType="viewmodels:MonkeysViewModel"
-        Title="Monkeys">
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Monkeys.Views.MonkeysPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:Monkeys.Models"
+    xmlns:viewmodels="clr-namespace:Monkeys.ViewModels"
+    Title="Monkeys"
+    x:DataType="viewmodels:MonkeysViewModel"
+    mc:Ignorable="d">
+    <d:ContentPage.BindingContext>
+        <viewmodels:MonkeysViewModel IsBusy="True">
+            <x:Arguments>
+                <x:Boolean>false</x:Boolean>
+            </x:Arguments>
+        </viewmodels:MonkeysViewModel>
+    </d:ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Margin="10,0" Text="{Binding MonkeyCount, StringFormat='{0} Monkeys'}"/>
-            <ListView ItemsSource="{Binding MonkeysGrouped}"
-					ItemTapped="Handle_ItemTapped"
-					ItemSelected="Handle_ItemSelected"
-                    HasUnevenRows="true"
-                    GroupShortNameBinding = "{Binding Key}"
-                    IsGroupingEnabled = "true"
-                    GroupDisplayBinding = "{Binding Key}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Margin="10" 
+                   Text="{Binding MonkeyCount,
+                          StringFormat='{0} Monkeys'}"
+                   d:Text="3 Monkeys"
+                   d:BackgroundColor="Orange"
+                   />
+            <ListView
+                Grid.Row="1"
+                GroupDisplayBinding="{Binding Key}"
+                GroupShortNameBinding="{Binding Key}"
+                HasUnevenRows="true"
+                IsGroupingEnabled="true"
+                d:IsGroupingEnabled="false"
+                ItemSelected="Handle_ItemSelected"
+                ItemTapped="Handle_ItemTapped"
+                ItemsSource="{Binding MonkeysGrouped}">
+                <d:ListView.ItemsSource>
+                    <x:Array Type="{x:Type models:Monkey}">
+                        <models:Monkey Name="Baboon" Location="Africa and Asia"/>
+                        <models:Monkey Name="Capuchin Monkey" Location="Central and South America"/>
+                        <models:Monkey Name="Blue Monkey" Location="Central and East Africa"/>
+                    </x:Array>
+                </d:ListView.ItemsSource>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="models:Monkey">
                         <ViewCell>
-                            <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                            <Grid
+                                Padding="10"
+                                ColumnSpacing="10"
+                                RowSpacing="10">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <controls:CircleImage 
-										BorderColor="Aqua"
-										BorderThickness="3"
-										HeightRequest="66"
-                                        WidthRequest="66"
-										HorizontalOptions="CenterAndExpand"
-										VerticalOptions="CenterAndExpand"
-										Aspect="AspectFill"
-                                       Source="{Binding Image}"/>
-                                <StackLayout VerticalOptions="Center" Grid.Column="1">
-                                    <Label Text="{Binding Name}"/>
-                                    <Label Text="{Binding Location}"/>
+                                <controls:CircleImage
+                                    Aspect="AspectFill"
+                                    BorderColor="Black"
+                                    BorderThickness="3"
+                                    HeightRequest="66"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Source="{Binding Image}"
+                                    d:Source="icon.png"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="66" />
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" />
+                                    <Label Text="{Binding Location}" />
                                 </StackLayout>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+            <ActivityIndicator 
+                Grid.RowSpan="2"
+                IsVisible="{Binding IsBusy}"
+                IsRunning="{Binding IsBusy}"
+                d:IsRunning="True"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
